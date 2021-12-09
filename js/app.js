@@ -161,25 +161,27 @@ section.appendChild(article);
 
 let table = document.createElement('table');
 article.appendChild(table);
+let thead = document.createElement('thead');
+table.appendChild(thead);
+// let tr = document.createElement('tr');
+// table.appendChild(tr);
 
-let tr = document.createElement('tr');
-table.appendChild(tr);
 // top table row set
 
 // generates time headers
 function genTableHeader() {
   let th = document.createElement('th');
   th.textContent = 'City/Local Time';
-  tr.appendChild(th);
+  thead.appendChild(th);
   for (let i = 0; i < shopHours; i++) {
     th = document.createElement('th');
     let shoptime = 6 + i;
     th.textContent = `${shoptime}:00`;
-    tr.appendChild(th);
+    thead.appendChild(th);
   }
   th = document.createElement('th');
   th.textContent = 'Store Total';
-  tr.appendChild(th);
+  thead.appendChild(th);
 }
 genTableHeader();
 
@@ -239,20 +241,20 @@ lima.render();
 // generates totals footer
 function genTableFooter() {
 
+  let thead = document.createElement('thead');
+  table.appendChild(thead);
   let th = document.createElement('th');
-  table.appendChild(th);
-  let td = document.createElement('td');
-  td.textContent = 'Totals';
-  th.appendChild(td);
+  th.textContent = 'Totals';
+  thead.appendChild(th);
   for (let i = 0; i < shopHours; i++) {
     let hourTotal = 0;
     for (let j = 0; j < cityList.length; j++) {
       let tdSale = cityList[j].salesArr[i];
       hourTotal += tdSale;
     }
-    td = document.createElement('td');
-    td.textContent = `${hourTotal}`;
-    th.appendChild(td);
+    th = document.createElement('td');
+    th.textContent = `${hourTotal}`;
+    thead.appendChild(th);
   }
 }
 genTableFooter();

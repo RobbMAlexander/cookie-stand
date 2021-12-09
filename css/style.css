@@ -1,5 +1,158 @@
+body {
+	background-color: salmon;
+}
+
 table {
   border: 1px black solid;
-	border-collapse: separate;
-	border-spacing: 1;
+	border-collapse: collapse;
 }
+
+body {
+  font-family: sans-serif;
+
+}
+
+header {
+	background-color: rgb(75,75,75);
+  height: 90px;
+}
+
+h1 {
+	margin: auto;
+	margin-top: 45px;
+	width: 80%;
+	font-family: 'Baloo Bhaijaan 2', cursive;
+	/* sourced from Google Fonts */
+	font-size: 90px;
+	color: black;
+}
+
+header img {
+  margin: auto;
+  margin-top: 10px;
+}
+
+header li {
+  color: rgb(150,150,150);
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 30px;
+  line-height: 95px;
+}
+
+nav {
+  width: 960px;
+  margin: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(150,150,150);
+}
+
+main img {
+	margin-top: 25px;
+}
+
+#salmon {
+	margin-bottom: 80px;
+}
+
+#family {
+	float:left;
+	margin-left: 5%;
+	margin-right: 15px;
+}
+
+#fish {
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+#shirt {
+	margin-left: 175px;
+	margin-right: 55px;
+}
+
+#cutter {
+	margin-right: 150px;
+}
+
+#chinook {
+	margin-left: 45px;
+	margin-right: 40px;
+}
+
+#frosted-cookie {
+	margin-left: 50px;
+}
+
+li:first-child {
+	margin-left: 15px;
+}
+
+
+li:last-child {
+	margin-right: 15px;
+}
+
+li {
+	margin: 10px;
+}
+
+main article {
+  float: right;
+  margin-top: 25px;
+}
+
+h3 {
+  font-family: 'Baloo Bhaijaan 2', cursive;
+	font-size: 50px;
+  margin-left: 30%;
+	margin-right: 30%;
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+
+h4 {
+	margin-top: 25px;
+	margin-left: 15%;
+	margin-right: 15%;
+	font-size: 30px;
+}
+
+#locationlist {
+	display: inline-block;
+	margin-left: 30px;
+}
+
+main p {
+	float: right;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-top: 2px;
+  height: auto;
+  line-height: 18px;
+  font-style: italic;
+  overflow: auto;
+}
+
+main div {
+	color: black;
+  background-color: darkred;
+  display: inline-block;
+  padding: 12px 34px;
+}
+
+main div:hover {
+  background-color: burlywood;
+  transition: 350ms;
+}
+
+footer {
+	position: fixed;
+  background-color: rgb(75,75,75);
+  height: 90px;
+  margin-top: 25px;
+}
+
