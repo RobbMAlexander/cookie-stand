@@ -185,6 +185,30 @@ function genTableHeader() {
 }
 genTableHeader();
 
+// adds new ShopCity instance per newShop form
+const newShopForm = document.getElementById('newShop');
+
+function handleShopAdd(event) {
+  event.preventDefault();
+  let cityName = event.target.cityName.value;
+  let customersHourlyMin = event.target.customersHourlyMin.value;
+  let customersHourlyMax = event.target.customersHourlyMax.value;
+  let salesMeanCookie = event.target.salesMeanCookie.value;
+
+  const newShopCity = new ShopCity(cityName, customersHourlyMin, customersHourlyMax, salesMeanCookie);
+
+  newShopCity.render();
+
+  newShopForm.reset();
+
+  // ID-ing totals footer then deleting for fresh total on form submit
+  let doomedRow = document.getElementById('doomedRow');
+  doomedRow.remove();
+  genTableFooter();
+}
+
+newShopForm.addEventListener('submit', handleShopAdd);
+
 // generates table body
 
 // function genTableBody() {
@@ -210,7 +234,6 @@ genTableHeader();
 // };
 // genTableBody();
 
-
 ShopCity.prototype.render = function () {
   let tr = document.createElement('tr');
   table.appendChild(tr);
@@ -232,6 +255,9 @@ ShopCity.prototype.render = function () {
 };
 // console.log(seattle.salesArr);
 
+
+// hardcoded calls per city replaced w/ referencial in genTable for future cities
+
 seattle.render();
 tokyo.render();
 dubai.render();
@@ -240,21 +266,27 @@ lima.render();
 
 // generates totals footer
 function genTableFooter() {
-
-  let thead = document.createElement('thead');
-  table.appendChild(thead);
+  // testing totals row refresh (removal & regen)
+  // let theadtotal = 0;
+  // if (typeof theadtotal === typeof 'doomstring') {
+  //   theadtotal.remove();
+  // }
+  let theadtotal = document.createElement('thead');
+  theadtotal.setAttribute('id', 'doomedRow');
+  table.appendChild(theadtotal);
   let th = document.createElement('th');
   th.textContent = 'Totals';
-  thead.appendChild(th);
+  theadtotal.appendChild(th);
   for (let i = 0; i < shopHours; i++) {
     let hourTotal = 0;
+
     for (let j = 0; j < cityList.length; j++) {
       let tdSale = cityList[j].salesArr[i];
       hourTotal += tdSale;
     }
     th = document.createElement('td');
     th.textContent = `${hourTotal}`;
-    thead.appendChild(th);
+    theadtotal.appendChild(th);
   }
 }
 genTableFooter();

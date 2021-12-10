@@ -1,8 +1,18 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="css/reset.css">
+  <!-- <link rel="stylesheet" href="css/reset.css"> -->
   <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <style>
+    input:invalid {
+      border: 2px solid salmon;
+    }
+
+    input:valid {
+      border: 1px solid black;
+    }
+
+  </style>
   <title>
     Pat's Salmon Cookies
   </title>
@@ -15,6 +25,21 @@
   <main>
     <h2>Global Sales</h2>
     <section id="sales-by-city"></section>
+    <h2>New Shop Entry</h2>
+    <form id="newShop">
+      <fieldset>
+        <legend>New Shop Entry</legend>
+        <label for="cityName">City Name</label>
+        <input id="cityName" type="text" name="cityName" required>
+        <label for="customersHourlyMin">Minimum Customers Per Hour</label>
+        <input id="customersHourlyMin" type="number" name="customersHourlyMin" step="1" required>
+        <label for="customersHourlyMax">Maximum Customers Per Hour</label>
+        <input id="customersHourlyMax" type="number" name="customersHourlyMax" step="1" required>
+        <label for="salesMeanCookie">Average Cookies Per Customer</label>
+        <input id="salesMeanCookie" type="number" name="salesMeanCookie" step="1" required>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
   </main>
   <footer> &copy;2021 rma</footer>
   <script src="js/app.js"></script>
